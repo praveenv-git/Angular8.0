@@ -1,0 +1,47 @@
+<h5>dashboard works!</h5>
+<div class="row">
+<div class="col-log-3">
+   Designation: {{Designation | uppercase}} <br>
+   UserName : {{UserName | lowercase}} <br>
+   NumberOfITMembers: {{NoOfItTeamMembers}} <br>
+   Totalcost Project: {{TotalCostofAllproject | currency:'usd'}} <br>
+   Pending Taks: {{PendingTasks}} <br>
+   UpComingProjects: {{UpcomingProjects}}<br>
+   AvilableUnits : {{AvilableUnits}}
+   
+</div>
+<div style="margin-left: 20px;">
+<h5 >DropDown Menu</h5>
+<div class="dropdown-menu">
+    <a class="dropdown-tem" href="#">2016</a>
+    <a class="dropdown-tem" href="#">2017</a>
+    <a class="dropdown-tem" href="#">2018</a>
+    <a class="dropdown-tem" href="#">2019</a>
+</div>
+
+</div>
+<!-- using ngfor -->
+<div style="margin-left: 20px;">
+    <h5>Client Information</h5>
+    <ul>
+        <li *ngFor="let Client of Clients"> {{Client}}</li>
+    </ul>
+</div>
+<div style="margin-left: 20px;">
+    <h5>Team Members  Information</h5>
+    <table style="border: 1px; color: brown;">
+        <tr>
+            <td>Region</td>
+            <td>MemberCount</td>
+        </tr>
+        <tr *ngFor="let members of TeamMumberSummery">
+            <td>{{members.region}}</td>
+            <td>{{members.TeammberCount }}</td>
+        </tr>
+    </table>
+    <ul>
+        <li *ngFor="let Members of TeamMumberSummery"> {{Members.region}} / {{Members.TeammberCount }}</li>
+    </ul>
+</div>
+</div>
+
